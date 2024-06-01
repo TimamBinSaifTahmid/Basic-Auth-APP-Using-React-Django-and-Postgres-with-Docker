@@ -1,11 +1,11 @@
-# Basic-Auth-APP-Using-React-Django-and-Postgres-with-Docker
+# React Django Postgres Basic Authentication with Docker
 
-This project implements a user authentication system using Django and React. It includes user registration, login, logout, and fetching user data. Authentication is handled using JWT (JSON Web Tokens) and HTTP-only cookies for improved security. The application's frontend is styled using Bootstrap.
+This project implements a basic authentication system using React, Django, and PostgreSQL, all containerized with Docker. The application allows users to register, login, and logout, with JWT (JSON Web Tokens) used for authentication and HTTP-only cookies for improved security. Bootstrap is utilized for frontend styling.
 
 The project consists of two directories: 
 
-- `client`: Contains the React application
-- `server`: Contains the Django backend
+- `frontend`: Contains the React application
+- ``: Contains the Django backend
 
 ## Installation
 
@@ -15,9 +15,7 @@ To run this project on your local machine, follow the steps below:
 
 Ensure you have the following installed on your local machine:
 
-- Python 3.8 or higher
-- Node.js v14.15.0 or higher
-- npm 6.14.9 or higher
+- Docker
 
 ### Setup
 
