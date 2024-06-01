@@ -5,7 +5,7 @@ This project implements a basic authentication system using React, Django, and P
 The project consists of two directories: 
 
 - `frontend`: Contains the React application
-- ``: Contains the Django backend
+- `backend`: Contains the Django backend
 
 ## Installation
 
@@ -32,6 +32,9 @@ Ensure you have the following installed on your local machine:
 
     ```
     sudo docker compose -f docker-compose.yml build
+    ```
+
+    ```
     sudo docker compose -f docker-compose.yml up -d
     ```
 
