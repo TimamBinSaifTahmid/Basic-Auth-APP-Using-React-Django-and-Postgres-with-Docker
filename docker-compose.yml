@@ -1,0 +1,70 @@
+version: '3.9'
+
+services:
+  postgres:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    container_name: basic_auth_postgres_db
+    image: basic_auth_db_image
+    hostname: postgres_db
+    ports:
+      - '5432:5432'
+
+    env_file:
+      - ./backend/.env_backend
+
+    volumes:
+      - basic_auth_postgres:/var/lib/postgresql/data/
+    
+    networks:
+      - mynetwork
+
+  backend: 
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    image: basic_auth_backend_app_image
+    container_name: basic_auth_backend_app_container
+    hostname: backend_server
+    env_file:
+      - ./backend/.env_backend
+      - ./backend/.env
+
+    ports:
+      - '8000:8000'
+
+    volumes:
+      - ./backend:/app/backend
+
+    depends_on:
+      - postgres
+
+    networks:
+      - mynetwork
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: basic_auth_frontend_app_image
+    container_name: basic_frontend_react_app_container
+    hostname: frontend_server
+    ports:
+      - '80:80'
+
+    volumes:
+      - ./frontend:/app/frontend
+
+    depends_on:
+      - backend
+
+    networks:
+      - mynetwork
+volumes:
+  basic_auth_postgres:
+
+networks:
+  mynetwork:
+    driver: bridge
+    name: basic_auth_network
