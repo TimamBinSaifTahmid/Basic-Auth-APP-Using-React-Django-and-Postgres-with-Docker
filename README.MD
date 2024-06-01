@@ -21,58 +21,20 @@ Ensure you have the following installed on your local machine:
 
 1. Clone the repository:
     ```
-    git clone https://github.com/<yourusername>/<yourrepository>.git
+    git clone https://github.com/TimamBinSaifTahmid/Basic-Auth-APP-Using-React-Django-and-Postgres-with-Docker.git
     ```
 2. Change into the directory:
     ```
-    cd <yourrepository>
+    cd Basic-Auth-APP-Using-React-Django-and-Postgres-with-Docker
     ```
 
-### Server
+### Build and RUN docker-compose.yml file
 
-1. Navigate to the `server` directory:
     ```
-    cd server
-    ```
-2. Install Django and other dependencies:
-    ```
-    pip install -r requirements.txt
-    ```
-3. Create a virtual environment (Optional but recommended):
-    ```
-    python -m venv env
-    ```
-4. Activate the virtual environment:
-    On Windows:
-    ```
-    .\env\Scripts\activate
-    ```
-    On MacOS/Linux:
-    ```
-    source env/bin/activate
-    ```
-5. Create a `.env` file in the `server` directory and add your secret key like this: 
-    ```
-    SECRET_KEY=<your-secret-key>
+    sudo docker compose -f docker-compose.yml build
+    sudo docker compose -f docker-compose.yml up -d
     ```
 
-### Client
+Now, your backend should run at port 8000 and client is serving through nginx on port 80. If you write http://localhost/ it will hit the base directory. 
 
-1. Navigate to the `client` directory:
-    ```
-    cd ../client
-    ```
-2. Install all the dependencies:
-    ```
-    npm install
-    ```
-3. Run the client:
-    ```
-    npm start
-    ```
 
-Now, your application should be running at `localhost:3000`.
-
-Note:
-- The Django server should be running at the same time as the React application for the system to function properly.
-- The application uses the email field instead of the username field for user identification.
