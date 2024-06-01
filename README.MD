@@ -6,6 +6,7 @@ The project consists of two directories:
 
 - `frontend`: Contains the React application
 - `backend`: Contains the Django backend
+- `db`: Contains the postgres 
 
 ## Installation
 
