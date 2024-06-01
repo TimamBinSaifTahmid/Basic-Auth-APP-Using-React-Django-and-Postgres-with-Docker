@@ -34,6 +34,8 @@ Ensure you have the following installed on your local machine:
     sudo docker compose -f docker-compose.yml build
     ```
 
+
+
     ```
     sudo docker compose -f docker-compose.yml up -d
     ```
