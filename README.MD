@@ -30,11 +30,13 @@ Ensure you have the following installed on your local machine:
 
 ### Build and RUN docker-compose.yml file
 
-$ sudo docker compose -f docker-compose.yml build
-    
-    
-$ sudo docker compose -f docker-compose.yml up -d
-    
+```
+ sudo docker compose -f docker-compose.yml build
+```    
+
+```    
+sudo docker compose -f docker-compose.yml up -d
+```    
 
 Now, your backend should run at port 8000 and client is serving through nginx on port 80. If you write http://localhost/ it will hit the base directory. 
 
